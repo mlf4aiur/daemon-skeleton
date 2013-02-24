@@ -1,0 +1,10 @@
+# http://docs.python.org/distutils/sourcedist.html#manifest-template
+# http://docs.python.org/distutils/sourcedist.html#specifying-the-files-to-distribute
+
+# Including
+# Python source files, tests/*.py will be automatically included.
+
+include README.rst
+
+# Configuration
+include daemon_skeleton/conf *.cfg
