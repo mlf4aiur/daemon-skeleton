@@ -16,7 +16,7 @@ Follow next guide to setup your development environment.
 
     sudo pip install virtualenv
     virtualenv .venv
-    . venv/scripts/activate
+    . .venv/bin/activate
     pip install -r requirements.txt
     rm -rf .git
 
