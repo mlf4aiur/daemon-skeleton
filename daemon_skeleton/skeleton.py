@@ -97,7 +97,6 @@ class Skeleton(object):
             try:
                 while not queue.empty():
                     size = queue.get()
-                    queue.task_done()
                     self.lock.acquire()
                     handler.human_readable(size)
                     self.lock.release()
