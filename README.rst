@@ -50,6 +50,19 @@ Benefits
 
     fab pack deploy
 
+Contributing
+------------
+
+- Fork it
+- Create your feature branch (git checkout -b my-new-feature)
+- Commit your changes (git commit -am 'Add some feature')
+- Push to the branch (git push origin my-new-feature)
+- Create new Pull Request
+
+Bugs
+----
+If you find a bug please report it. Verify that it hasn't `already been submitted <https://github.com/mlf4aiur/daemon-skeleton/issues>`_ and then `log a new bug <https://github.com/mlf4aiur/daemon-skeleton/issues/new>`_. Be sure to provide as much information as possible.
+
 Credits
 -------
 
