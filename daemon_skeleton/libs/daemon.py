@@ -14,7 +14,8 @@
                 - Added output to console on completion
                 - Tidied up formatting
                 11th Mar 2009 (David Mytton <david@boxedice.com>)
-                - Fixed problem with daemon exiting on Python 2.4 (before SystemExit was part of the Exception base)
+                - Fixed problem with daemon exiting on Python 2.4 (
+                    before SystemExit was part of the Exception base)
                 13th Aug 2010 (David Mytton <david@boxedice.com>
                 - Fixed unhandled exception if PID file is empty
 '''
@@ -33,7 +34,8 @@ class Daemon(object):
 
     Usage: subclass the Daemon class and override the run() method
     """
-    def __init__(self, pidfile, stdin=os.devnull, stdout=os.devnull, stderr=os.devnull, home_dir='.', umask=022, verbose=1):
+    def __init__(self, pidfile, stdin=os.devnull, stdout=os.devnull,
+                 stderr=os.devnull, home_dir='.', umask=022, verbose=1):
         self.stdin = stdin
         self.stdout = stdout
         self.stderr = stderr
@@ -153,7 +155,8 @@ class Daemon(object):
             message = "pidfile %s does not exist. Not running?\n"
             sys.stderr.write(message % self.pidfile)
 
-            # Just to be sure. A ValueError might occur if the PID file is empty but does actually exist
+            # Just to be sure. A ValueError might occur
+            # if the PID file is empty but does actually exist
             if os.path.exists(self.pidfile):
                 os.remove(self.pidfile)
 
@@ -181,15 +184,15 @@ class Daemon(object):
         if self.verbose >= 1:
             print "Stopped"
 
-    def restart(self):
+    def restart(self, *args, **kwargs):
         """
         Restart the daemon
         """
         self.stop()
-        self.start()
+        self.start(*args, **kwargs)
 
-    def run(self):
+    def run(self, *args, **kwargs):
         """
-        You should override this method when you subclass Daemon. It will be called after the process has been
-        daemonized by start() or restart().
+        You should override this method when you subclass Daemon.
+        It will be called after the process has been daemonized by start() or restart().
         """
